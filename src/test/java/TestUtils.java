@@ -1,4 +1,5 @@
 import card.Card;
+import card.CardBuilder;
 import enums.CardSymbols;
 import enums.CardValues;
 
@@ -10,7 +11,7 @@ public class TestUtils {
 
     public static List<Card> getStraightLower() {
         return asList(
-                new Card(CardSymbols.CLUB, CardValues.SIX),
+                new CardBuilder().symbol(CardSymbols.CLUB).value(CardValues.SIX).build(),
                 new Card(CardSymbols.DIAMOND, CardValues.TWO),
                 new Card(CardSymbols.CLUB, CardValues.FOUR),
                 new Card(CardSymbols.HEART, CardValues.THREE),
