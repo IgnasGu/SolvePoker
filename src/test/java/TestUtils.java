@@ -1,7 +1,7 @@
 import card.Card;
 import card.CardBuilder;
-import enums.CardSymbols;
-import enums.CardValues;
+import enums.CardSymbol;
+import enums.CardValue;
 
 import java.util.List;
 
@@ -11,41 +11,41 @@ public class TestUtils {
 
     public static List<Card> getStraightLower() {
         return asList(
-                new CardBuilder().symbol(CardSymbols.CLUB).value(CardValues.SIX).build(),
-                new Card(CardSymbols.DIAMOND, CardValues.TWO),
-                new Card(CardSymbols.CLUB, CardValues.FOUR),
-                new Card(CardSymbols.HEART, CardValues.THREE),
-                new Card(CardSymbols.CLUB, CardValues.FIVE)
+                new CardBuilder().symbol(CardSymbol.CLUB).value(CardValue.SIX).build(),
+                new Card(CardSymbol.DIAMOND, CardValue.TWO),
+                new Card(CardSymbol.CLUB, CardValue.FOUR),
+                new Card(CardSymbol.HEART, CardValue.THREE),
+                new Card(CardSymbol.CLUB, CardValue.FIVE)
         );
     }
 
     public static List<Card> getStraightHigher() {
         return asList(
-                new Card(CardSymbols.CLUB, CardValues.EIGHT),
-                new Card(CardSymbols.DIAMOND, CardValues.NINE),
-                new Card(CardSymbols.CLUB, CardValues.JACK),
-                new Card(CardSymbols.HEART, CardValues.TEN),
-                new Card(CardSymbols.CLUB, CardValues.QUEEN)
+                new Card(CardSymbol.CLUB, CardValue.EIGHT),
+                new Card(CardSymbol.DIAMOND, CardValue.NINE),
+                new Card(CardSymbol.CLUB, CardValue.JACK),
+                new Card(CardSymbol.HEART, CardValue.TEN),
+                new Card(CardSymbol.CLUB, CardValue.QUEEN)
         );
     }
 
     public static List<Card> getFlushHigher() {
         return asList(
-                new Card(CardSymbols.CLUB, CardValues.EIGHT),
-                new Card(CardSymbols.CLUB, CardValues.KING),
-                new Card(CardSymbols.CLUB, CardValues.QUEEN),
-                new Card(CardSymbols.CLUB, CardValues.SEVEN),
-                new Card(CardSymbols.CLUB, CardValues.JACK)
+                new Card(CardSymbol.CLUB, CardValue.EIGHT),
+                new Card(CardSymbol.CLUB, CardValue.KING),
+                new Card(CardSymbol.CLUB, CardValue.QUEEN),
+                new Card(CardSymbol.CLUB, CardValue.SEVEN),
+                new Card(CardSymbol.CLUB, CardValue.JACK)
         );
     }
 
     public static List<Card> getFlushLower() {
         return asList(
-                new Card(CardSymbols.HEART, CardValues.EIGHT),
-                new Card(CardSymbols.HEART, CardValues.TWO),
-                new Card(CardSymbols.HEART, CardValues.QUEEN),
-                new Card(CardSymbols.HEART, CardValues.SEVEN),
-                new Card(CardSymbols.HEART, CardValues.JACK)
+                new Card(CardSymbol.HEART, CardValue.EIGHT),
+                new Card(CardSymbol.HEART, CardValue.TWO),
+                new Card(CardSymbol.HEART, CardValue.QUEEN),
+                new Card(CardSymbol.HEART, CardValue.SEVEN),
+                new Card(CardSymbol.HEART, CardValue.JACK)
         );
     }
 }

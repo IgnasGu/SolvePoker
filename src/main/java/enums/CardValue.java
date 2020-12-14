@@ -1,6 +1,6 @@
 package enums;
 
-public enum CardValues {
+public enum CardValue {
     TWO,
     THREE,
     FOUR,

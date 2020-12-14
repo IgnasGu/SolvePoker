@@ -1,5 +1,5 @@
 import card.Card;
-import enums.PokerHands;
+import enums.PokerHandName;
 import org.junit.Test;
 import pokerhand.PokerHandFactory;
 
@@ -13,12 +13,12 @@ public class PokerHandFactoryTests {
     @Test
     public void testIsStraight(){
         List<Card> hand = TestUtils.getStraightLower();
-        assertEquals(PokerHands.STRAIGHT, PokerHandFactory.getPokerHand(hand).getPokerHand());
+        assertEquals(PokerHandName.STRAIGHT, PokerHandFactory.getPokerHand(hand).getPokerHand());
     }
 
     @Test
     public void testIsFlush(){
         List<Card> hand = TestUtils.getFlushLower();
-        assertEquals(PokerHands.FLUSH, PokerHandFactory.getPokerHand(hand).getPokerHand());
+        assertEquals(PokerHandName.FLUSH, PokerHandFactory.getPokerHand(hand).getPokerHand());
     }
 }

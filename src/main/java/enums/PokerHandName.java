@@ -1,6 +1,6 @@
 package enums;
 
-public enum PokerHands {
+public enum PokerHandName {
     STRAIGHT,
     FLUSH,
 }

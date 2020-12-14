@@ -1,6 +1,6 @@
 package enums;
 
-public enum CardSymbols {
+public enum CardSymbol {
     DIAMOND,
     SPADE,
     CLUB,

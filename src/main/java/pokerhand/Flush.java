@@ -1,11 +1,12 @@
 package pokerhand;
 
 import card.Card;
-import enums.PokerHands;
+import enums.PokerHandName;
 
 import java.util.List;
 
-import static utils.Utils.*;
+import static utils.Utils.compareCardValues;
+import static utils.Utils.getDescendingSortedValues;
 
 public class Flush implements PokerHand {
     @Override
@@ -14,8 +15,8 @@ public class Flush implements PokerHand {
     }
 
     @Override
-    public PokerHands getPokerHand() {
-        return PokerHands.FLUSH;
+    public PokerHandName getPokerHand() {
+        return PokerHandName.FLUSH;
     }
 
     @Override

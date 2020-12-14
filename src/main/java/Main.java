@@ -1,6 +1,6 @@
 import card.Card;
-import enums.CardSymbols;
-import enums.CardValues;
+import enums.CardSymbol;
+import enums.CardValue;
 import list.ListStrategy;
 import list.MarkdownListStrategy;
 import list.TextProcessor;
@@ -20,19 +20,19 @@ public class Main {
 //        TextProcessor<MarkdownListStrategy> tp = new TextProcessor(HtmlListStrategy::new);
 
         List<Card> firstHand = asList(
-                new Card(CardSymbols.CLUB, CardValues.SIX),
-                new Card(CardSymbols.DIAMOND, CardValues.TWO),
-                new Card(CardSymbols.CLUB, CardValues.FOUR),
-                new Card(CardSymbols.HEART, CardValues.THREE),
-                new Card(CardSymbols.CLUB, CardValues.FIVE)
+                new Card(CardSymbol.CLUB, CardValue.SIX),
+                new Card(CardSymbol.DIAMOND, CardValue.TWO),
+                new Card(CardSymbol.CLUB, CardValue.FOUR),
+                new Card(CardSymbol.HEART, CardValue.THREE),
+                new Card(CardSymbol.CLUB, CardValue.FIVE)
         );
 
         List<Card> secondHand = asList(
-                new Card(CardSymbols.CLUB, CardValues.EIGHT),
-                new Card(CardSymbols.DIAMOND, CardValues.NINE),
-                new Card(CardSymbols.CLUB, CardValues.JACK),
-                new Card(CardSymbols.HEART, CardValues.TEN),
-                new Card(CardSymbols.CLUB, CardValues.QUEEN)
+                new Card(CardSymbol.CLUB, CardValue.EIGHT),
+                new Card(CardSymbol.DIAMOND, CardValue.NINE),
+                new Card(CardSymbol.CLUB, CardValue.JACK),
+                new Card(CardSymbol.HEART, CardValue.TEN),
+                new Card(CardSymbol.CLUB, CardValue.QUEEN)
         );
 
         PokerHand firstPokerHand = PokerHandFactory.getPokerHand(firstHand);

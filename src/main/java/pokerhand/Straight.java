@@ -1,8 +1,8 @@
 package pokerhand;
 
 import card.Card;
-import enums.CardValues;
-import enums.PokerHands;
+import enums.CardValue;
+import enums.PokerHandName;
 
 import java.util.List;
 import java.util.stream.IntStream;
@@ -10,10 +10,10 @@ import java.util.stream.IntStream;
 import static java.util.stream.Collectors.toList;
 import static utils.Utils.getDescendingSortedValues;
 
-public class Straight implements PokerHand {
+public class Straight implements PokerHandFactory, PokerHand {
     @Override
     public boolean isPokerHand(List<Card> hand) {
-        List<Integer> sortedValues = hand.stream().map(card -> card.getValue().equals(CardValues.ACE) ? 0 : card.getValue().ordinal()).sorted().collect(toList());
+        List<Integer> sortedValues = hand.stream().map(card -> card.getValue().equals(CardValue.ACE) ? 0 : card.getValue().ordinal()).sorted().collect(toList());
 
         int firstValue = sortedValues.get(0);
         List<Integer> straight = IntStream.range(firstValue, firstValue + 5).boxed().collect(toList());
@@ -22,8 +22,8 @@ public class Straight implements PokerHand {
     }
 
     @Override
-    public PokerHands getPokerHand() {
-        return PokerHands.STRAIGHT;
+    public PokerHandName getPokerHand() {
+        return PokerHandName.STRAIGHT;
     }
 
     @Override

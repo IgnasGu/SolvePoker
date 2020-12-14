@@ -1,18 +1,18 @@
 package card;
 
-import enums.CardSymbols;
-import enums.CardValues;
+import enums.CardSymbol;
+import enums.CardValue;
 
 public class CardBuilder {
 
     protected Card card = new Card();
 
-    public CardBuilder symbol(CardSymbols symbol){
+    public CardBuilder symbol(CardSymbol symbol){
         card.cardSymbols = symbol;
         return this;
     }
 
-    public CardBuilder value(CardValues value){
+    public CardBuilder value(CardValue value){
         card.cardValues = value;
         return this;
     }
