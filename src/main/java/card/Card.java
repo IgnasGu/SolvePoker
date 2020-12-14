@@ -24,7 +24,22 @@ public class Card {
 
     @Override
     public String toString() {
-        return "Card{" + cardSymbols + ' ' + cardValues + '}';
+        String bulletSymbol = "*";
+        switch (this.cardSymbols){
+            case DIAMOND:
+                bulletSymbol = "♦";
+                break;
+            case SPADE:
+                bulletSymbol = "♠";
+                break;
+            case CLUB:
+                bulletSymbol = "♣";
+                break;
+            case HEART:
+                bulletSymbol = "♥";
+                break;
+        }
+        return bulletSymbol + " {" + cardSymbols + ' ' + cardValues + '}';
     }
 
 
