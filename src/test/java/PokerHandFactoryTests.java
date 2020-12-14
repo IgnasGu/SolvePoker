@@ -13,12 +13,12 @@ public class PokerHandFactoryTests {
     @Test
     public void testIsStraight(){
         List<Card> hand = TestUtils.getStraightLower();
-        assertEquals(PokerHandName.STRAIGHT, PokerHandFactory.getPokerHand(hand).getPokerHand());
+        assertEquals(PokerHandName.STRAIGHT, PokerHandFactory.getPokerHand(hand).getName());
     }
 
     @Test
     public void testIsFlush(){
         List<Card> hand = TestUtils.getFlushLower();
-        assertEquals(PokerHandName.FLUSH, PokerHandFactory.getPokerHand(hand).getPokerHand());
+        assertEquals(PokerHandName.FLUSH, PokerHandFactory.getPokerHand(hand).getName());
     }
 }

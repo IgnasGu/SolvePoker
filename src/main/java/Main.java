@@ -1,4 +1,6 @@
 import card.Card;
+import compareStrategies.CompareStrategy;
+import compareStrategies.ComparingStrategyProvider;
 import enums.CardSymbol;
 import enums.CardValue;
 import list.ListStrategy;
@@ -38,11 +40,11 @@ public class Main {
         PokerHand firstPokerHand = PokerHandFactory.getPokerHand(firstHand);
         PokerHand secondPokerHand = PokerHandFactory.getPokerHand(secondHand);
 
-        if (firstPokerHand.getPokerHand().ordinal() > secondPokerHand.getPokerHand().ordinal()) {
-            System.out.println(String.format("First hand won! With a %s", firstPokerHand.getPokerHand()));
+        if (firstPokerHand.getName().ordinal() > secondPokerHand.getName().ordinal()) {
+            System.out.println(String.format("First hand won! With a %s", firstPokerHand.getName()));
             printHand(tp, firstHand);
-        } else if (firstPokerHand.getPokerHand().ordinal() < secondPokerHand.getPokerHand().ordinal()) {
-            System.out.println(String.format("Second hand won! With a %s", secondPokerHand.getPokerHand()));
+        } else if (firstPokerHand.getName().ordinal() < secondPokerHand.getName().ordinal()) {
+            System.out.println(String.format("Second hand won! With a %s", secondPokerHand.getName()));
             printHand(tp, secondHand);
         } else {
             determineSamePokerHandWinner(firstHand, secondHand, firstPokerHand, secondPokerHand, tp);
@@ -56,17 +58,20 @@ public class Main {
     }
 
     private static void determineSamePokerHandWinner(List<Card> firstHand, List<Card> secondHand, PokerHand firstPokerHand, PokerHand secondPokerHand, TextProcessor<? extends ListStrategy> tp) {
-        switch (firstPokerHand.compare(firstHand, secondHand)) {
+        ComparingStrategyProvider csp = new ComparingStrategyProvider();
+        CompareStrategy cs = csp.provideCompareStrategy(firstHand, secondHand);
+
+        switch (cs.compare(firstHand, secondHand)) {
             case 1:
-                System.out.println(String.format("First hand won! With a %s", firstPokerHand.getPokerHand()));
+                System.out.println(String.format("First hand won! With a %s", firstPokerHand.getName()));
                 printHand(tp, firstHand);
                 break;
             case -1:
-                System.out.println(String.format("Second hand won! With a %s", secondPokerHand.getPokerHand()));
+                System.out.println(String.format("Second hand won! With a %s", secondPokerHand.getName()));
                 printHand(tp, secondHand);
                 break;
             case 0:
-                System.out.println(String.format("It's a draw with %s hand", firstPokerHand.getPokerHand()));
+                System.out.println(String.format("It's a draw with %s hand", firstPokerHand.getName()));
                 printHand(tp, firstHand);
         }
     }
